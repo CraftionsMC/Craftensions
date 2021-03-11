@@ -1,0 +1,4 @@
+name: Craftensions
+version: ${project.version}
+main: net.craftions.craftensions.Craftensions
+api-version: 1.16
