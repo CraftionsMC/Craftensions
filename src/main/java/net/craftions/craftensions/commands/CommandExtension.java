@@ -11,6 +11,13 @@ public class CommandExtension implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if(args.length == 0){
+            sender.sendMessage("§cPlease use §b" + command.getUsage());
+        }else {
+            if(args.length == 1){
+
+            }
+        }
         return true;
     }
 }
