@@ -7,7 +7,7 @@
     <groupId>net.craftions</groupId>
     <artifactId>Citybuild_Extentions</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>Citybuild_Extentions</name>
 
