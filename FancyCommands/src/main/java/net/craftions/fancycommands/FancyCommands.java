@@ -1,13 +1,15 @@
 package net.craftions.fancycommands;
 
+import net.craftions.fancycommands.commands.CommandGameMode;
+import net.craftions.fancycommands.commands.CommandHeal;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class FancyCommands extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-
+        getCommand("gamemode").setExecutor(new CommandGameMode());
+        getCommand("heal").setExecutor(new CommandHeal());
     }
 
     @Override
