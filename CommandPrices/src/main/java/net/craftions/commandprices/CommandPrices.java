@@ -1,12 +1,11 @@
 package net.craftions.commandprices;
 
 import net.craftions.commandprices.config.Config;
-import net.craftions.commandprices.events.EventPlayerChat;
+import net.craftions.commandprices.events.EventPlayerCommand;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitTask;
 
 public final class CommandPrices extends JavaPlugin {
 
@@ -19,7 +18,7 @@ public final class CommandPrices extends JavaPlugin {
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
-        Bukkit.getPluginManager().registerEvents(new EventPlayerChat(), this);
+        Bukkit.getPluginManager().registerEvents(new EventPlayerCommand(), this);
         Config.reloadConfig(false);
     }
 

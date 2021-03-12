@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class Config {
 
-    protected static FileConfiguration config;
+    protected static FileConfiguration config = null;
     protected static File configFile = new File("plugins/CommandPrices/config.yml");
 
     public static void reloadConfig(Boolean save){
@@ -36,6 +36,6 @@ public class Config {
     }
 
     public static FileConfiguration getConfig(){
-        return null;
+        return config;
     }
 }
