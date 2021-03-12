@@ -1,0 +1,14 @@
+name: FancyCommands
+version: ${project.version}
+main: net.craftions.fancycommands.FancyCommands
+api-version: 1.13
+authors: [ MCTzOCK ]
+commands:
+  gamemode:
+    usage: /<command> <mode>
+    permission: fancycommands.gamemode
+    aliases:
+      - gm
+  heal:
+    usage: /<command> [player]
+    permission: fancycommands.heal
