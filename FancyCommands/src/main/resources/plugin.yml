@@ -12,6 +12,9 @@ commands:
     permission: fancycommands.gamemode
     aliases:
       - gm
+      - flowerpower
+      - fp
   heal:
     usage: /<command> [player]
     permission: fancycommands.heal
+  clear:
