@@ -4,3 +4,5 @@ main: net.craftions.commandprices.CommandPrices
 api-version: 1.16
 load: STARTUP
 authors: [ MCTzOCK ]
+depend:
+  - Vault

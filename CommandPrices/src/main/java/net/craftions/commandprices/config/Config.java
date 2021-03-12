@@ -12,7 +12,7 @@ import java.io.IOException;
 public class Config {
 
     protected static FileConfiguration config;
-    protected static File configFile = new File("plugins/FancyCommands/config.yml");
+    protected static File configFile = new File("plugins/CommandPrices/config.yml");
 
     public static void reloadConfig(Boolean save){
         if(!configFile.exists()){
