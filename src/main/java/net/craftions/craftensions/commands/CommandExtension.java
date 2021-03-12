@@ -63,7 +63,8 @@ public class CommandExtension implements CommandExecutor {
                             if(loader instanceof URLClassLoader){
                                 ((URLClassLoader) loader).close();
                                 exFile.delete();
-                                sender.sendMessage("§aSuccessfully removed extension §b" + extension + ".§a You need to reload the server.");
+                                sender.sendMessage("§aSuccessfully removed extension §b" + extension + ".§a Reloading the server...");
+                                Bukkit.reload();
                             }
                             System.gc();
                         }catch (Exception ex){
