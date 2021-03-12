@@ -1,10 +1,10 @@
 name: Craftensions
 version: ${project.version}
 main: net.craftions.craftensions.Craftensions
-api-version: 1.16
+api-version: 1.13
 commands:
   extension:
-    usage: /<command> <list|remove|install|update> [<type>:<name>]
+    usage: /<command> <list|remove|install> [name]
     permission: craftensions.command.extension
     aliases:
       - ex

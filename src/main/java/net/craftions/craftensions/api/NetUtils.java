@@ -6,6 +6,9 @@ package net.craftions.craftensions.api;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 public class NetUtils {
@@ -24,5 +27,22 @@ public class NetUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static Boolean urlExists(String u){
+        try {
+            URL url = new URL(u);
+            HttpURLConnection huc = (HttpURLConnection) url.openConnection();
+            if(huc.getResponseCode() != 404){
+                return true;
+            }else {
+                return false;
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }
