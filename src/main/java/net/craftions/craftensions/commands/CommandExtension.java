@@ -25,14 +25,7 @@ public class CommandExtension implements CommandExecutor {
             sender.sendMessage(getWrongUsageResponse(command));
         }else {
             if(args.length == 1){
-                if(args[0].equals("list")){
-                    sender.sendMessage("§bInstalled Extensions:");
-                    for(Extension ex : Extension.installedExtensions){
-                        sender.sendMessage("- " + ex.getName());
-                    }
-                }else {
-                    sender.sendMessage(getWrongUsageResponse(command));
-                }
+                sender.sendMessage(getWrongUsageResponse(command));
             }else if(args.length == 2){
                 if(args[0].equals("install")){
                     String extension = args[1];
@@ -41,7 +34,8 @@ public class CommandExtension implements CommandExecutor {
                         NetUtils.download("https://cdn.craftions.net/extensions/" + extension + "/latest/" + extension + "-latest.jar", new File("plugins/" + extension + "-latest.jar"));
                         sender.sendMessage("§aEnabling Extension...");
                         try {
-                            Bukkit.getPluginManager().loadPlugin(new File("plugins/" + extension + "-latest.jar"));
+                            Plugin p = Bukkit.getPluginManager().loadPlugin(new File("plugins/" + extension + "-latest.jar"));
+                            Bukkit.getPluginManager().enablePlugin(p);
                             sender.sendMessage("§aSuccessfully enabled §b" + extension);
                         } catch (InvalidPluginException e) {
                             sender.sendMessage("§cAn error occurred. See the console log for details.");

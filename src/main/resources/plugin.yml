@@ -4,7 +4,7 @@ main: net.craftions.craftensions.Craftensions
 api-version: 1.13
 commands:
   extension:
-    usage: /<command> <list|remove|install> [name]
+    usage: /<command> <remove|install> <name>
     permission: craftensions.command.extension
     aliases:
       - ex
