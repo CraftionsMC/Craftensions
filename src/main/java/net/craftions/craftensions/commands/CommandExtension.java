@@ -9,9 +9,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitTask;
 
 import java.io.File;
+import java.net.URLClassLoader;
 
 public class CommandExtension implements CommandExecutor {
 
@@ -43,7 +45,19 @@ public class CommandExtension implements CommandExecutor {
                     String extension = args[1];
                     File exFile = new File("plugins/" + extension + "-latest.jar");
                     if(exFile.exists()){
-
+                        try {
+                            Plugin plugin = Bukkit.getPluginManager().getPlugin(extension);
+                            ClassLoader loader = plugin.getClass().getClassLoader();
+                            if(loader instanceof URLClassLoader){
+                                ((URLClassLoader) loader).close();
+                                exFile.delete();
+                                sender.sendMessage("§aSuccessfully removed extension §b" + extension + ".§a You need to reload the server.");
+                            }
+                            System.gc();
+                        }catch (Exception ex){
+                            sender.sendMessage("§cAn error occurred. See the console log for details.");
+                            ex.printStackTrace();
+                        }
                     }else {
                         sender.sendMessage("§cThis extension is not installed.");
                     }
