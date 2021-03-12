@@ -9,6 +9,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.InvalidDescriptionException;
+import org.bukkit.plugin.InvalidPluginException;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitTask;
 
@@ -37,7 +39,17 @@ public class CommandExtension implements CommandExecutor {
                     if(NetUtils.urlExists("https://cdn.craftions.net/extensions/" + extension + "/latest/" + extension + "-latest.jar")){
                         sender.sendMessage("§aDownloading Extension....");
                         NetUtils.download("https://cdn.craftions.net/extensions/" + extension + "/latest/" + extension + "-latest.jar", new File("plugins/" + extension + "-latest.jar"));
-                        sender.sendMessage("§aDownloaded! To use this extension you need to reload the server!");
+                        sender.sendMessage("§aEnabling Extension...");
+                        try {
+                            Bukkit.getPluginManager().loadPlugin(new File("plugins/" + extension + "-latest.jar"));
+                            sender.sendMessage("§aSuccessfully enabled §b" + extension);
+                        } catch (InvalidPluginException e) {
+                            sender.sendMessage("§cAn error occurred. See the console log for details.");
+                            e.printStackTrace();
+                        } catch (InvalidDescriptionException e) {
+                            sender.sendMessage("§cAn error occurred. See the console log for details.");
+                            e.printStackTrace();
+                        }
                     }else {
                         sender.sendMessage("§cThis extension does not exists.");
                     }
