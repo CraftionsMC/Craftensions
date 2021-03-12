@@ -3,6 +3,9 @@ version: ${project.version}
 main: net.craftions.fancycommands.FancyCommands
 api-version: 1.13
 authors: [ MCTzOCK ]
+depend:
+  - Vault
+  - Craftensions
 commands:
   gamemode:
     usage: /<command> <mode>

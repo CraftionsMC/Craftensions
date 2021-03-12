@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.craftions</groupId>
-    <artifactId>fancyCommands</artifactId>
+    <artifactId>commandPrices</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>FancyCommands</name>
+    <name>CommandPrices</name>
 
     <properties>
         <java.version>1.8</java.version>
