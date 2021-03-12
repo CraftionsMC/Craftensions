@@ -29,7 +29,7 @@ public class CommandExtension implements CommandExecutor {
             }else if(args.length == 2){
                 if(args[0].equals("install")){
                     String extension = args[1];
-                    installExtension(extension, sender);
+                    installExtension(extension, sender, true);
                 }else if(args[0].equals("remove")){
                     String extension = args[1];
                     File exFile = new File("plugins/" + extension + "-latest.jar");
@@ -63,7 +63,9 @@ public class CommandExtension implements CommandExecutor {
                             ex.printStackTrace();
                         }
                     }
-                    installExtension(extension, sender);
+                    installExtension(extension, sender, false);
+                    sender.sendMessage("§aFinished. Reloading...");
+                    Bukkit.reload();
                 }else {
                     sender.sendMessage(getWrongUsageResponse(command));
                 }
@@ -76,21 +78,24 @@ public class CommandExtension implements CommandExecutor {
         return "§cPlease use §b" + command.getUsage();
     }
 
-    public static void installExtension(String extension, CommandSender sender){
+    public static void installExtension(String extension, CommandSender sender, Boolean load){
         if(NetUtils.urlExists("https://cdn.craftions.net/extensions/" + extension + "/latest/" + extension + "-latest.jar")){
             sender.sendMessage("§aDownloading Extension....");
             NetUtils.download("https://cdn.craftions.net/extensions/" + extension + "/latest/" + extension + "-latest.jar", new File("plugins/" + extension + "-latest.jar"));
-            sender.sendMessage("§aEnabling Extension...");
-            try {
-                Plugin p = Bukkit.getPluginManager().loadPlugin(new File("plugins/" + extension + "-latest.jar"));
-                Bukkit.getPluginManager().enablePlugin(p);
-                sender.sendMessage("§aSuccessfully enabled §b" + extension);
-            } catch (InvalidPluginException e) {
-                sender.sendMessage("§cAn error occurred. See the console log for details.");
-                e.printStackTrace();
-            } catch (InvalidDescriptionException e) {
-                sender.sendMessage("§cAn error occurred. See the console log for details.");
-                e.printStackTrace();
+            sender.sendMessage("§aDownloaded.");
+            if(load){
+                sender.sendMessage("§aEnabling Extension...");
+                try {
+                    Plugin p = Bukkit.getPluginManager().loadPlugin(new File("plugins/" + extension + "-latest.jar"));
+                    Bukkit.getPluginManager().enablePlugin(p);
+                    sender.sendMessage("§aSuccessfully enabled §b" + extension);
+                } catch (InvalidPluginException e) {
+                    sender.sendMessage("§cAn error occurred. See the console log for details.");
+                    e.printStackTrace();
+                } catch (InvalidDescriptionException e) {
+                    sender.sendMessage("§cAn error occurred. See the console log for details.");
+                    e.printStackTrace();
+                }
             }
         }else {
             sender.sendMessage("§cThis extension does not exists.");
