@@ -20,6 +20,8 @@ public final class FancyCommands extends JavaPlugin {
         getCommand("rain").setExecutor(new CommandWeather());
         getCommand("enderchest").setExecutor(new CommandEnderchest());
         getCommand("tp").setExecutor(new CommandTP());
+        getCommand("tpa").setExecutor(new CommandTPA());
+        getCommand("tpaccept").setExecutor(new CommandTPA());
     }
 
     @Override

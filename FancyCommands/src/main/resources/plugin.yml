@@ -44,3 +44,9 @@ commands:
   tp:
     usage: /<command> [player] [player]
     permission: fancycommands.teleport
+  tpa:
+    usage: /<command> [player]
+    permission: fancycommands.tpa
+  tpaccept:
+    usage: /<command>
+    permission: fancycommands.tpaccept
