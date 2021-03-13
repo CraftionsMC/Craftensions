@@ -1,4 +1,4 @@
-package org.bstats.bukkit;
+package net.craftions.craftensions;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;

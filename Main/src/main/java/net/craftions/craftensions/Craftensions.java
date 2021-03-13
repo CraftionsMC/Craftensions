@@ -1,9 +1,7 @@
 package net.craftions.craftensions;
 
-import net.craftions.craftensions.api.Config;
 import net.craftions.craftensions.commands.CommandExtension;
 import net.craftions.craftensions.tabcompleter.CommandExtensionTabCompleter;
-import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -14,7 +12,7 @@ public final class Craftensions extends JavaPlugin {
     @Override
     public void onEnable() {
         // Init bStats
-        Metrics metrics = new Metrics(this, 10644);
+        Metrics metrics = new Metrics(this, 10647);
 
         getCommand("extension").setExecutor(new CommandExtension());
         getCommand("extension").setTabCompleter(new CommandExtensionTabCompleter());
