@@ -1,0 +1,4 @@
+name: CBUtils
+version: ${project.version}
+main: net.craftions.cbutils.CBUtils
+api-version: 1.16
