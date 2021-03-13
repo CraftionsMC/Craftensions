@@ -3,7 +3,7 @@ version: ${project.version}
 main: net.craftions.fancycommands.FancyCommands
 api-version: 1.13
 authors: [ MCTzOCK ]
-depend:
+softdepend:
   - Vault
   - Craftensions
 commands:
@@ -12,9 +12,35 @@ commands:
     permission: fancycommands.gamemode
     aliases:
       - gm
-      - flowerpower
-      - fp
+  gmc:
+    usage: /<command>
+    permission: fancycommands.gamemode
+  gms:
+    usage: /<command>
+    permission: fancycommands.gamemode
+  gma:
+    usage: /<command>
+    permission: fancycommands.gamemode
+  gmsp:
+    usage: /<command>
+    permission: fancycommands.gamemode
   heal:
     usage: /<command> [player]
     permission: fancycommands.heal
-  clear:
+  weather:
+    usage: /<command> <sun|rain|thunder> [world]
+    permission: fancycommands.weather
+  sun:
+    usage: /<command> [world]
+    permission: fancycommands.weather
+  rain:
+    usage: /<command> [world]
+    permission: fancycommands.weather
+  enderchest:
+    usage: /<command> [player]
+    permission: fancycommands.enderchest
+    aliases:
+      - ec
+  tp:
+    usage: /<command> [player] [player]
+    permission: fancycommands.teleport
