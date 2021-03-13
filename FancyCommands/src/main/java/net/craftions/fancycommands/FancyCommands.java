@@ -1,6 +1,7 @@
 package net.craftions.fancycommands;
 
 import net.craftions.fancycommands.commands.*;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class FancyCommands extends JavaPlugin {
