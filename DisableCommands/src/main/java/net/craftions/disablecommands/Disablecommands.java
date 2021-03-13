@@ -1,5 +1,6 @@
 package net.craftions.disablecommands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.EventHandler;
@@ -17,6 +18,7 @@ public final class Disablecommands extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        Bukkit.getPluginManager().registerEvents(this, this);
         File cfgFile = new File("plugins/DisableCommands/commands.yml");
         if(!cfgFile.exists()){
             if(!cfgFile.getParentFile().isDirectory()){ cfgFile.getParentFile().mkdirs(); }
