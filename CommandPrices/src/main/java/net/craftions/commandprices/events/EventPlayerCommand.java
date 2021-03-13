@@ -13,7 +13,12 @@ public class EventPlayerCommand implements Listener {
 
     @EventHandler
     public void onExecute(PlayerCommandPreprocessEvent e){
-        if(e.getMessage().contains(":") && !e.getPlayer().hasPermission("commandprices.bypass")){
+        if(!e.getPlayer().hasPermission("commandprices.bypass")){
+            if(e.getMessage().contains(":")){
+                e.getPlayer().sendMessage("§cYou cant use commands with :");
+                e.setCancelled(true);
+                return;
+            }
             String[] _split = e.getMessage().split(" ");
             String cmd = _split[0].split("/")[1];
             if(Config.getConfig().contains(cmd)){

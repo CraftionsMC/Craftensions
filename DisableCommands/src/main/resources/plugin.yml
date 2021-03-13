@@ -1,0 +1,4 @@
+name: Disablecommands
+version: ${project.version}
+main: net.craftions.disablecommands.Disablecommands
+api-version: 1.16
