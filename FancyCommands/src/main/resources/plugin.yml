@@ -27,3 +27,12 @@ commands:
   heal:
     usage: /<command> [player]
     permission: fancycommands.heal
+  weather:
+    usage: /<command> <sun|rain|thunder> [world]
+    permission: fancycommands.weather
+  sun:
+    usage: /<command> [world]
+    permission: fancycommands.weather
+  rain:
+    usage: /<command> [world]
+    permission: fancycommands.weather
