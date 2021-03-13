@@ -11,9 +11,13 @@ public final class FancyCommands extends JavaPlugin {
     @Override
     public void onEnable() {
         getCommand("gamemode").setExecutor(new CommandGameMode());
+        getCommand("gmc").setExecutor(new CommandGameMode());
+        getCommand("gms").setExecutor(new CommandGameMode());
+        getCommand("gmsp").setExecutor(new CommandGameMode());
+        getCommand("gma").setExecutor(new CommandGameMode());
         getCommand("heal").setExecutor(new CommandHeal());
-        getCommand("Repair").setExecutor(new CommandRepair());
-        getCommand("Clear").setExecutor(new CommandClear());
+        getCommand("repair").setExecutor(new CommandRepair());
+        getCommand("clear").setExecutor(new CommandClear());
     }
 
     @Override

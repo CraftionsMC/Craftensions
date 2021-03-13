@@ -12,9 +12,18 @@ commands:
     permission: fancycommands.gamemode
     aliases:
       - gm
-      - flowerpower
-      - fp
+  gmc:
+    usage: /<command>
+    permission: fancycommands.gamemode
+  gms:
+    usage: /<command>
+    permission: fancycommands.gamemode
+  gma:
+    usage: /<command>
+    permission: fancycommands.gamemode
+  gmsp:
+    usage: /<command>
+    permission: fancycommands.gamemode
   heal:
     usage: /<command> [player]
     permission: fancycommands.heal
-  clear:
