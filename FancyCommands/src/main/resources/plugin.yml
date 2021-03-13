@@ -18,3 +18,11 @@ commands:
     usage: /<command> [player]
     permission: fancycommands.heal
   clear:
+    usage: /<command>
+    permission: fancycommands.clear
+  repair:
+    usage: /<command>
+    permission: fancycommands.repair
+  killall:
+    usage: /<command> <entity type>
+    permission: fancycommands.killall

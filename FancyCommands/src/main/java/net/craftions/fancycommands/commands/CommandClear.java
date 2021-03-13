@@ -17,7 +17,7 @@ public class CommandClear implements CommandExecutor {
         }else{
             sender.sendMessage("§cYou need to be a player.");
         }
-        return false;
+        return true;
     }
 
 }

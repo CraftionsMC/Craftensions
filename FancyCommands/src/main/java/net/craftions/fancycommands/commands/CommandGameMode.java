@@ -14,6 +14,9 @@ public class CommandGameMode implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(sender instanceof Player){
+            if(args.length == 0){
+                sender.sendMessage("§c Please use: /gm <gamemode>.");
+            }
             if(args[0].equals("0") || args[0].startsWith("su")) {
                 ((Player) sender).setGameMode(GameMode.SURVIVAL);
                 sender.sendMessage("§bYour gamemode has been updated to §esurvival");

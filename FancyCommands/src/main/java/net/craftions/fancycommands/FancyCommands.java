@@ -1,9 +1,6 @@
 package net.craftions.fancycommands;
 
-import net.craftions.fancycommands.commands.CommandClear;
-import net.craftions.fancycommands.commands.CommandGameMode;
-import net.craftions.fancycommands.commands.CommandHeal;
-import net.craftions.fancycommands.commands.CommandRepair;
+import net.craftions.fancycommands.commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class FancyCommands extends JavaPlugin {
@@ -12,8 +9,10 @@ public final class FancyCommands extends JavaPlugin {
     public void onEnable() {
         getCommand("gamemode").setExecutor(new CommandGameMode());
         getCommand("heal").setExecutor(new CommandHeal());
-        getCommand("Repair").setExecutor(new CommandRepair());
-        getCommand("Clear").setExecutor(new CommandClear());
+        getCommand("repair").setExecutor(new CommandRepair());
+        getCommand("clear").setExecutor(new CommandClear());
+        getCommand("killall").setExecutor(new CommandKillAll());
+
     }
 
     @Override
