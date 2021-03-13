@@ -77,5 +77,6 @@
         <module>Main</module>
         <module>FancyCommands</module>
         <module>CommandPrices</module>
+        <module>CBUtils</module>
     </modules>
 </project>
