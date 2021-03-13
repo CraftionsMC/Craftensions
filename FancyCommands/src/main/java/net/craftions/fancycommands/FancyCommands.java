@@ -19,6 +19,7 @@ public final class FancyCommands extends JavaPlugin {
         getCommand("weather").setExecutor(new CommandWeather());
         getCommand("sun").setExecutor(new CommandWeather());
         getCommand("rain").setExecutor(new CommandWeather());
+        getCommand("enderchest").setExecutor(new CommandEnderchest());
     }
 
     @Override

@@ -36,3 +36,8 @@ commands:
   rain:
     usage: /<command> [world]
     permission: fancycommands.weather
+  enderchest:
+    usage: /<command> [player]
+    permission: fancycommands.enderchest
+    aliases:
+      - ec
