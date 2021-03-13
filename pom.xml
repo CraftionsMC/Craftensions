@@ -78,6 +78,5 @@
         <module>FancyCommands</module>
         <module>CommandPrices</module>
         <module>CBUtils</module>
-        <module>DisableCommands</module>
     </modules>
 </project>
