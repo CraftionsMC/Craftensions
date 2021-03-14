@@ -22,20 +22,40 @@ public class CommandRepair implements CommandExecutor {
                     sender.sendMessage("§cYou need to be a player.");
                 }
             } else {
-                sender.sendMessage("§bYou can't repair this Item:-(");
+                sender.sendMessage("§cYou can't repair this Item.");
 
             }
-        } else {
+        }
+        if (args[0].toLowerCase() == "inventory") {
             if (sender instanceof Player) {
-
                 for (ItemStack items : ((Player) sender).getInventory().getContents()) {
                     if (items instanceof Repairable) {
                         items.setDurability((short) items.getType().getMaxDurability());
                     }
                 }
             }
-
         }
+        if (args[0].toLowerCase() == "hand") {
+            if (sender instanceof Player) {
+                ((Player) sender).getItemInHand().setDurability(((Player) sender).getItemInHand().getType().getMaxDurability());
+                sender.sendMessage("§bYour " + ((Player) sender).getItemInHand().getType() + "§b got repaired.");
+            }
+        }
+        if (args[0].toLowerCase() == "all")
+            if (sender instanceof Player) {
+                for (ItemStack items : ((Player) sender).getInventory().getContents()) {
+                    if (items instanceof Repairable) {
+                        items.setDurability((short) items.getType().getMaxDurability());
+                    }
+                }
+                for (ItemStack armor : ((Player) sender).getInventory().getContents()){
+                    if (armor instanceof Repairable){
+                        armor.setDurability(armor.getType().getMaxDurability());
+                    }
+
+                }
+            }
+        sender.sendMessage("§b All your Items have been repaired.");
         return true;
     }
 }

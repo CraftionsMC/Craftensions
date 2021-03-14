@@ -16,7 +16,7 @@ public class CommandKillAll implements CommandExecutor {
             for (Entity e : player.getWorld().getEntities()) {
                 if (e.getType() == EntityType.valueOf(args[0])){
                     e.remove();
-                    sender.sendMessage("§b All Entitys from the type §e" + args[0]);
+                    sender.sendMessage("§b All Entitys from the type §e" + args[0] + "§b.");
                 }
             }
         } else {
