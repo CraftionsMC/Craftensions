@@ -5,13 +5,34 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.craftions</groupId>
-    <artifactId>Citybuild_Extentions</artifactId>
+    <artifactId>CraftensionsRoot</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Citybuild_Extentions</name>
+    <developers>
+        <developer>
+            <name>MCTzOCK</name>
+            <organization>Craftions</organization>
+        </developer>
+        <developer>
+            <name>Sausefix</name>
+            <organization>Craftions</organization>
+        </developer>
+    </developers>
 
-    <description>Citybuild Extentions</description>
+    <organization>
+        <name>Craftions</name>
+        <url>https://craftions.net</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>GPL-v3</name>
+        </license>
+    </licenses>
+
+    <name>CraftensionsRoot</name>
+
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -80,10 +101,10 @@
         <module>CBUtils</module>
     </modules>
     <distributionManagement>
-    <repository>
-      <id>github</id>
-      <name>GitHub Packages</name>
-      <url>https://maven.pkg.github.com/CraftionsMC/Craftensions</url>
-    </repository>
-  </distributionManagement>
+      <repository>
+        <id>github</id>
+        <name>GitHub Packages</name>
+        <url>https://maven.pkg.github.com/CraftionsMC/Craftensions</url>
+      </repository>
+    </distributionManagement>
 </project>
