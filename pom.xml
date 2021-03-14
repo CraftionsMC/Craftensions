@@ -79,4 +79,11 @@
         <module>CommandPrices</module>
         <module>CBUtils</module>
     </modules>
+    <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/CraftionsMC/Craftensions</url>
+    </repository>
+  </distributionManagement>
 </project>
