@@ -5,9 +5,7 @@ name: Maven Package
 
 on:
   release:
-    types:
-      - prereleased
-      - released
+    types: [prereleased, released]
 jobs:
   build:
 
