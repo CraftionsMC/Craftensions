@@ -1,0 +1,6 @@
+name: ActivationKeys
+version: ${project.version}
+main: net.craftions.activationkeys.ActivationKeys
+api-version: 1.16
+load: STARTUP
+authors: [ MCTzOCK ]
