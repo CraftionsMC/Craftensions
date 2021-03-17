@@ -4,3 +4,9 @@ main: net.craftions.activationkeys.ActivationKeys
 api-version: 1.16
 load: STARTUP
 authors: [ MCTzOCK ]
+commands:
+  key:
+    usage: /key <key>
+  keycreate:
+    usage: /keycreate <command_to_be_executed>
+    permission: activationkeys.create.key

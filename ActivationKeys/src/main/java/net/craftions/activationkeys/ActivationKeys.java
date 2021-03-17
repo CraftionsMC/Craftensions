@@ -1,6 +1,7 @@
 package net.craftions.activationkeys;
 
 import net.craftions.activationkeys.util.Config;
+import net.craftions.activationkeys.util.MySQL;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
@@ -11,14 +12,12 @@ public final class ActivationKeys extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        getCommand("key").setExecutor(new CommandKey());
+        getCommand("keycreate").setExecutor(new CommandKeyCreate());
         Config.doDefaults();
         Config.applyValues();
-    }
-
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
+        // Init database
+        // new MySQL("CRATE ").executeUpdate();
     }
 
     public static void log(String msg, String level){
